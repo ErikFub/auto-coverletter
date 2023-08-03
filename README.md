@@ -1,4 +1,4 @@
-*To potential recruiters checking the repository: No, I have not used this tool to create the cover letter for your company - all handcrafted! :)*
+*DISCLAIMER: This project is not meant to replace actually writing a cover letter. It is a fun project for me to play around with langchains and test the boundaries of current LLMs. To potential recruiters checking the repository: No, I have not used this tool to create the cover letter for your company - all handcrafted! :)*
 # auto-coverletter
 A LLM langchain-based tool for automatically creating a cover letter based on a link to a job posting and a PDF file with the CV.
 
