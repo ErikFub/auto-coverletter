@@ -1,0 +1,31 @@
+#!/bin/bash
+# Activate venv
+source .venv/bin/activate
+
+# Add current dir to python path
+current_dir=$(pwd)
+export PYTHONPATH="${PYTHONPATH}:${current_dir}"
+
+# Register kwargs
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --job_url=*)
+      job_url="${1#*=}"
+      ;;
+    --cv_file_path=*)
+      cv_file_path="${1#*=}"
+      ;;
+    --openai_api_key=*)
+      openai_api_key="${1#*=}"
+      ;;
+    *)
+      printf "***************************\n"
+      printf "* Error: Invalid argument.*\n"
+      printf "***************************\n"
+      exit 1
+  esac
+  shift
+done
+
+# Call function
+python3 src/create_cover_letter.py --job_url="$job_url" --cv_file_path="$cv_file_path" --openai_api_key="$openai_api_key"
